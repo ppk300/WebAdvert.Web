@@ -87,6 +87,7 @@ namespace WebAdvert.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Confirm_Post(ConfirmModel model)
         {
+            //Check if model i valid
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(model.Email).ConfigureAwait(false);
